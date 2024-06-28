@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+# plus pratique de l'importer pour le staticfiles 
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# chemin du répertoire
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # ajout de l'application créée
     'main'
 ]
 
@@ -119,6 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    # passe par la racine du projet puis le répertoire
+os.path.join(BASE_DIR,"multilang_site/static")
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
