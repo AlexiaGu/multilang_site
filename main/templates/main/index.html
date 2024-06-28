@@ -19,7 +19,8 @@
     <!-- pour appeler les éléments contenu dans la table Blog_Articles du fichier models.py -->
     <ul>
       {% for article in articles %}
-      <li>{{ article.title}}</li>
+      <!-- url pointant vers la page main/id récupéré en BDD-->
+      <li><a href="{% url 'main:show' article.id %}">{{ article.title}}</a></li>
       {% endfor %}
     </ul>
   </body>

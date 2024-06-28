@@ -1,0 +1,27 @@
+<!-- {% load static %} permet la prise en compte de l'appli "static" présent dans le dossier "settings"  -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mes articles</title>
+    <link rel="stylesheet" href="{% static 'global.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'main-application/css/main.css' %}"
+    />
+  </head>
+  <body>
+    <h1>{{ article.title}}</h1>
+
+    <p>Contenu : {{article.content}}</p>
+    <p>Date de publication : {{ article.publication_date |date:"d F Y" }}</p>
+    <p>Par : {{article.author.name}}</p>
+    <p>
+      <a href="{% url 'main:index' %}"
+        >&laquo; Revenir à la liste des articles
+      </a>
+    </p>
+  </body>
+</html>
