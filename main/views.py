@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader
+
+from main.models import Blog_Articles
+
+
 
 # Create your views here.
 
 def index(request):
-    # Récupération de ce message dans le fichier views.py de main
-    context = {"message": "Bello !"}
-    # pour récuperer le template main
-    template = loader.get_template("main/index.html")
-    return HttpResponse(template.render(context, request))
+    #création d'une variable articles qui depuis le model récupère tout ce qu'il y a dans la table Blog_Articles
+    context = {"articles": Blog_Articles.objects.all()}
+    return render(request, "main/index.html", context)

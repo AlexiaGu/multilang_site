@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     #  définition d'une vue pour l'affichage
-path('', views.index, name='index')
+    # utile pour faire des urls
+path('', views.index, name='indexOfMain')
 ]

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # ajout de l'application créée
-    'main'
+    'main',
 ]
 
 MIDDLEWARE = [

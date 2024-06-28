@@ -15,8 +15,12 @@
     />
   </head>
   <body>
-    <h1>Bienvenue sur Main</h1>
-    <!-- récupère le message "Bello" présent dans le fichier views.py de main -->
-    <p>{{ message }}</p>
+    <h1>Bienvenue sur le projet Multilang</h1>
+    <!-- pour appeler les éléments contenu dans la table Blog_Articles du fichier models.py -->
+    <ul>
+      {% for article in articles %}
+      <li>{{ article.title}}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
