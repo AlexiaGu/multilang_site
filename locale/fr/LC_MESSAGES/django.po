@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-29 15:50+0200\n"
+"POT-Creation-Date: 2024-06-29 16:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\main\templates\main\index.html:18
-msgid "Bienvenue sur le projet Multilang"
-msgstr "Welcome on the Multilang project"
-
-#: .\multilang_site\settings.py:124
+#: .\main\templates\main\index.html:19 .\main\templates\main\show.html:16
+#: .\multilang_site\settings.py:125
 msgid "English"
 msgstr "Anglais"
 
-#: .\multilang_site\settings.py:125
+#: .\main\templates\main\index.html:20 .\multilang_site\settings.py:126
 msgid "French"
 msgstr "Français"
+
+#: .\main\templates\main\index.html:23
+msgid "Bienvenue sur le projet Multilang"
+msgstr "Welcome on the Multilang project"
+
+#: .\main\templates\main\show.html:19
+#, python-format
+msgid " Contenu: %(article.content)s "
+msgstr ""
