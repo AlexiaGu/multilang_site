@@ -1,5 +1,5 @@
 <!-- {% load static %} permet la prise en compte de l'appli "static" présent dans le dossier "settings"  -->
-{% load static %}
+{% load static %} {% load i18n %}
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,7 +15,13 @@
     />
   </head>
   <body>
-    <h1>Bienvenue sur le projet Multilang</h1>
+    <p style="text-align: center">
+      <a href="/en/" role="button">{% trans "English" %}</a>
+      <a href="/fr/" role="button">{% trans "French" %}</a>
+    </p>
+    <h1 style="text-align: center">
+      {% trans "Bienvenue sur le projet Multilang" %}
+    </h1>
     <!-- pour appeler les éléments contenu dans la table Blog_Articles du fichier models.py -->
     <ul>
       {% for article in articles %}

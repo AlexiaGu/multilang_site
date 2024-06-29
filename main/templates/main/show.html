@@ -16,7 +16,7 @@
     <h1>{{ article.title}}</h1>
 
     <p>Contenu : {{article.content}}</p>
-    <p>Date de publication : {{ article.publication_date |date:"d F Y" }}</p>
+    <!-- <p>Date de publication : {{ article.publication_date }}</p> -->
     <p>Par : {{article.author.name}}</p>
     <p>
       <a href="{% url 'main:index' %}"
