@@ -8,3 +8,4 @@ urlpatterns = i18n_patterns(
     # route pour accéder à l'application
     path('', include('main.urls') )
 )
+
