@@ -27,11 +27,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-yeo+rb63@&i2stfr2_pw%1d+^se_5_2s2!6&s01$6r3^3nklb#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# en mode développement laisser à True en mode production False
+# en mode développement laisser à True 
 # si run avec le debug à true risque que des pirates s'en servent car affiche les erreurs et vulnérabilités et côtés client
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+# En mode production passer à False (pour le déploiement en ligne)
+DEBUG = False
+
+# Pour faire tourner le serveur en mode debug = False
+ALLOWED_HOSTS = ['votre-domaine.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -134,13 +138,15 @@ LOCALE_PATHS = [
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
+# pour le déploiement
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     # passe par la racine du projet puis le répertoire
 os.path.join(BASE_DIR,"multilang_site/static")
 ]
-
+# chemin pour la collecte des fichiers statiques 
+#Pour le déploiement
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

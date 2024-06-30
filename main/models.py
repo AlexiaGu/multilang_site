@@ -1,20 +1,5 @@
 from django.db import models
 
-"""
-primary_key
-unique
-default 
-null
-blank
-
-Charfield
-IntegerField
-DateField
-DateTimeField
-FloatField
-EmailField
-BooleanField
-"""
 
 # Create your models here:
 

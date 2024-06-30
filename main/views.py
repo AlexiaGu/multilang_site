@@ -10,9 +10,9 @@ from django.utils.translation import gettext_lazy as _
 # Create your views here.
 
 def index(request):
+    
     #création d'une variable articles qui depuis le model récupère tout ce qu'il y a dans la table Blog_Articles
     context = {"articles": Blog_Articles.objects.all()}
-
     for article in context["articles"]:
         article.id = int(article.id)
         # date_string = article.publication_date.strftime("%d %m %Y")
