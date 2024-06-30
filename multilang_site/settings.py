@@ -42,7 +42,7 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 #  DEBUG = True est déplacer dans le fichier .env de l'application.
 
 # En mode production passer à False (pour le déploiement en ligne)
-DEBUG = False
+# DEBUG = False
 
 # Pour faire tourner le serveur en mode debug = False
 ALLOWED_HOSTS = ['votre-domaine.com', '127.0.0.1', 'localhost']
