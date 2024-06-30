@@ -14,22 +14,32 @@ from pathlib import Path
 # plus pratique de l'importer pour le staticfiles 
 import os
 from django.utils.translation import gettext_lazy as _
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # chemin du répertoire
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# pour récupérer les élements du fichier .env de l'application
+env = environ.Env()
+environ.Env.read_env(env_file=str(BASE_DIR / "main" / ".env"))
+
+# lecture des éléments du fichier .env
+SECRET_KEY = env("SECRET_KEY")
+DEBUG = env.bool("DEBUG")
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yeo+rb63@&i2stfr2_pw%1d+^se_5_2s2!6&s01$6r3^3nklb#'
+# déplacer dans le fichier .env pour le déploiement
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # en mode développement laisser à True 
 # si run avec le debug à true risque que des pirates s'en servent car affiche les erreurs et vulnérabilités et côtés client
-# DEBUG = True
+#  DEBUG = True est déplacer dans le fichier .env de l'application.
 
 # En mode production passer à False (pour le déploiement en ligne)
 DEBUG = False
@@ -147,6 +157,9 @@ os.path.join(BASE_DIR,"multilang_site/static")
 # chemin pour la collecte des fichiers statiques 
 #Pour le déploiement
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
