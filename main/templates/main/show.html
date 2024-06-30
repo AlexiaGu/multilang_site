@@ -19,7 +19,7 @@
     <h1>{{ article.title}}</h1>
 
     <p>{% blocktrans %} Contenu: {{article.content}} {% endblocktrans %}</p>
-    <!-- <p>Date de publication : {{ article.publication_date }}</p> -->
+    <!-- <p>Date de publication : {{ article.publication_date | date}}</p> -->
     <p>Par : {{article.author.name}}</p>
     <p>
       <a href="{% url 'main:index' %}"
